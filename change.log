@@ -1,0 +1,38 @@
+Version 2.0.0
+- Baseline
+
+Version 2.0.1
+- Made main window progress bar available.
+- Moved PDF generation to background thread and connected to progress bar.
+- Added PDF generation completion/error dialog.
+- Changed face crop icon.
+- Added captions to landmarks when viewing.
+- Removed separate landmark highlight colour & radius.
+- Removed boundary line width & colour options.
+- Removed model "active" colour from options.
+- Added separate model opacity slider to options.
+- Text colour and visibility now updates when changed in options.
+- Made updates to displayed landmarks position and identifiers independent of model.
+- Removed logo from options dialog.
+- Reformatted options dialog.
+- Added logo to About dialog.
+- Removed under viewer buttons:
+    Moved show axes to options dialog.
+    Moved reset camera and save snapshot to view menu.
+    Made lighting in viewer dependent on whether most recently selected model is textured.
+- Changed application wide window logo to be opaque.
+- Changed copy icon on buttons below viewers.
+- Stretched move/copy buttons horizontally.
+- Parses UTC date/time filenames for viewing in ModelInfoDialog.
+- Placed reset camera button on main toolbar.
+- Added save snapshot button to toolbar - made to save concatenation of views.
+- Disabled world axes interactivity (NB still interferes with other interactions).
+- Fixed bugs:
+  b6) Unable to select move landmarks when multiple faces viewed.
+  b7) Landmarks can be moved after toggling landmark display.
+  b8) [WIN32] Drag'n'drop files not working (now disabled for Unix).
+  b14) Reset camera before/after all models added/removed to/from viewer.
+  b15) Views not properly deselected from adjacent views after copy.
+  b16) Copy/move not enabled on target viewer immediately after copying to it.
+  b19) [WIN32] Crash on exit.
+  b20) Fixed distance mapping (fast marching).

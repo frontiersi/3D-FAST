@@ -1,0 +1,50 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/logos">
+	<file alias="window_icon.png">res/3dfast_128x128.png</file>
+	<file alias="splash.png">res/splash.png</file>
+	<file alias="logo.png">res/logo_99x32.png</file>
+	<file alias="logo_big.png">res/logo_198x64.png</file>
+</qresource>
+<qresource prefix="/icons">
+	<file alias="move_faces_left.png">res/icons/icons8-sort-left-80.png</file>
+	<file alias="move_faces_right.png">res/icons/icons8-sort-right-80.png</file>
+
+	<file alias="copy_faces_left.png">res/icons/icons8-new-copy-40.png</file>
+	<file alias="copy_faces_right.png">res/icons/icons8-new-copy-40.png</file>
+
+	<file alias="remove_face.png">res/icons/icons8-remove-face.png</file>
+
+	<file alias="fullscreen.png">res/icons/icons8-fit-to-width.png</file>
+	<file alias="lights.png">res/icons/icons8-Illumination.png</file>
+	<file alias="screenshot.png">res/icons/icons8-Screenshot.png</file>
+	<file alias="reset_camera.png">res/icons/icons8-Aperture.png</file>
+    <file alias="axes.png">res/icons/icons8-coordinate-system.png</file>
+
+	<file alias="pdf.png">res/icons/icons8-PDF.png</file>
+    <file alias="load.png">res/icons/icons8-open.png</file>
+	<file alias="save.png">res/icons/icons8-save.png</file>
+	<file alias="save_as.png">res/icons/icons8-save_as.png</file>
+	<file alias="save_close.png">res/icons/icons8-save-close.png</file>
+	<file alias="exit.png">res/icons/icons8-Shutdown.png</file>
+
+	<file alias="landmarks.png">res/icons/icons8-landmarks.png</file>
+	<file alias="boundary.png">res/icons/icons8-boundary.png</file>
+	<file alias="orient_camera.png">res/icons/icons8-orient-camera.png</file>
+
+	<file alias="crop_face.png">res/icons/icons8-crop-80.png</file>
+	<file alias="calipers.png">res/icons/icons8-calipers.png</file>
+	<file alias="detect_face.png">res/icons/icons8-detect-face.png</file>
+    <file alias="move_landmarks.png">res/icons/icons8-mind-map.png</file>
+    <file alias="add_landmark.png">res/icons/icons8-add-row-80.png</file>
+    <file alias="delete_landmark.png">res/icons/icons8-delete-row-80.png</file>
+    <file alias="add_tag.png">res/icons/icons8-add-tag-80.png</file>
+    <file alias="delete_tag.png">res/icons/icons8-remove-tag-80.png</file>
+
+    <file alias="help.png">res/icons/icons8-Help.png</file>
+    <file alias="about.png">res/icons/icons8-About.png</file>
+    <file alias="options.png">res/icons/icons8-Settings.png</file>
+    <file alias="plugins.png">res/icons/icons8-Plugin.png</file>
+    <file alias="model_info.png">res/icons/icons8-ID Card.png</file>
+    <file alias="licensing.png">res/icons/icons8-Parchment.png</file>
+</qresource>
+</RCC>

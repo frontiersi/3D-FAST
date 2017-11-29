@@ -1,0 +1,76 @@
+
+))))))))))) BUGS (((((((((((
+
+Backend:
+b1) When crop radius too high, cropping function breaks (past 2.35 on petra.obj)
+    Enforce hard limit for now.
+b2) Fix RFeatures::ObjModelBoundaryFinder to deal with strings of triangles.
+b3) Prevent VTK error dialog from appearing on release build.
+
+Landmarks:
+b4) Landmarks dialog column spacing.
+b5) Show toggle for single landmarks not working.
+b22) Retain landmarks in view panes when switching between them.
+
+Interface:
+b9) Holding down control and moving mouse also rotates model (VTK key handling issue on interactor).
+b10) Clearer curvature mapping icons.
+
+Visualisations:
+b11) Fix ObjModel remeshing to allow recombining across multiple materials without "stitching".
+b12) When switching to a colour visualisation with only two colours, reflect this in the options.
+b21) Revisualise existing face in viewer when one moved out of viewer.
+
+Misc:
+b13) Change splash screen to include current version codes.
+b17) Switch off toggle actions before carrying out model changing action (e.g. face detection).
+b18) Immediately after face detection with two copies of a face visible, they both become selected.
+
+
+FIXED:
+b6) Unable to select move landmarks when multiple faces viewed.
+b7) Landmarks can be moved after toggling landmark display.
+b14) Reset camera after all models removed from viewer.
+b15) Views not properly deselected from adjacent views after copy.
+b16) Copy/move not enabled on target viewer immediately after copying to it.
+b8) [WIN32] Drag'n'drop files not working.
+b19) [WIN32] Crash on exit.
+b20) Fixed bug in distance mapping (Fast Marching).
+
+
+))))))))))) FEATURES (((((((((((
+
+Outstanding:
+f1) Progress bar for lengthy actions.
+
+f2) Create geodesic distances for calipers tool.
+
+f3) Move/copy left/right actions for context menu.
+
+f4) Documentation.
+
+f6) Make one visualisation per viewer (shared between all models).
+
+f7) Dropdown list view under viewer to aid model select?
+
+f8) Save out visualisation mappings to 3df? Consider issue of multiple views.
+
+f9) Build and visualise distance map.
+
+f11) Close all on file menu.
+
+f12) Rename landmarks.
+
+f13) When model opacity is zero, show dashed model outline.
+
+f16) Model movement controls (toggle between model and camera).
+
+f17) Error logging to file (dialog offering to send log as email attachment?)
+
+
+
+
+Implemeted:
+f5) Change surface colour on active for models without borders.
+f10) Right click on a model selects it.
+f14) Display of capture date/time in ModelInfoDialog.

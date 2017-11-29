@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="WIREFRAME_ICON">iconsv/icons8-mesh-80.png</file>
+    <file alias="POINTS_ICON">iconsv/icons8-mesh-dots-80.png</file>
+    <file alias="SURFACE_ICON">iconsv/icons8-mesh-filled-80.png</file>
+    <file alias="TEXTURE_ICON">iconsv/icons8-cloth-80.png</file>
+</qresource>
+</RCC>

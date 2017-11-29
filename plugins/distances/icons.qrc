@@ -1,0 +1,5 @@
+<RCC>
+    <qresource>
+        <file alias="DISTANCE_ICON">icons/icons8-wood-80.png</file>
+    </qresource>
+</RCC>

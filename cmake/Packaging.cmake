@@ -1,0 +1,32 @@
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "3D-FAST (Facial Analysis Streamlining for clinical Translation)")
+set(CPACK_PACKAGE_VENDOR "Richard Palmer")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.txt")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/COPYRIGHT.txt")
+set(CPACK_PACKAGE_VERSION_MAJOR ${APP_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${APP_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${APP_VERSION_PATCH})
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "${PROJECT_NAME}")
+if(WIN32 AND NOT UNIX)
+    # There is a bug in NSI that does not handle full unix paths properly. Make
+    # sure there is at least one set of four (4) backlasshes.
+    set(CPACK_PACKAGE_ICON "${PROJECT_SOURCE_DIR}/res/icons\\\\InstallImg.bmp")
+
+    set(CPACK_NSIS_MUI_ICON "${PROJECT_SOURCE_DIR}/res/icons\\\\3dfast_128x128.ico")
+    set(CPACK_NSIS_MUI_UNIICON "${PROJECT_SOURCE_DIR}/res/icons\\\\3dfast_128x128.ico")
+
+    set(CPACK_NSIS_INSTALLED_ICON_NAME "${PROJECT_NAME}.exe")
+    set(CPACK_NSIS_DISPLAY_NAME "3D-FAST")
+    #set(CPACK_NSIS_HELP_LINK "http:\\\\\\\\www.my-project-home-page.org")
+    #set(CPACK_NSIS_URL_INFO_ABOUT "http:\\\\\\\\www.my-personal-home-page.com")
+    set(CPACK_NSIS_CONTACT "r.l.palmer@curtin.edu.au")
+    #set(CPACK_NSIS_MODIFY_PATH ON)
+    set(CPACK_NSIS_EXECUTABLES_DIRECTORY ".")
+    set(CPACK_NSIS_MUI_FINISHPAGE_RUN "${PROJECT_NAME}.exe")
+else()
+    set(CPACK_STRIP_FILES "${PROJECT_NAME}")
+    set(CPACK_SOURCE_STRIP_FILES "")
+endif()
+set(CPACK_PACKAGE_EXECUTABLES "${PROJECT_NAME}" "3D-FAST")
+
+#include(InstallRequiredSystemLibraries)
+include(CPack)

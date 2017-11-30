@@ -31,8 +31,9 @@ bool ActionCropFace::operator()( FaceControl* fcont)
     const std::string units = fcont->getOptions().munits;
 
     std::cerr << "[INFO] FaceTools::ActionCropFace::operator(): Crop #1 within " << crad << " " << units << " of face centre..." << std::endl;
-    const int svid = omd->getKDTree()->find( omd->getLandmark( FaceTools::Landmarks::NASAL_TIP));
-    RFeatures::ObjModel::Ptr cobj = FaceTools::crop( omd->getObject(), fc, crad, svid);
+    const int svidx = omd->getKDTree()->find( omd->getLandmark( FaceTools::Landmarks::NASAL_TIP));
+    RFeatures::ObjModel::Ptr cobj = FaceTools::crop( omd->getObject(), fc, svidx, crad);
+    std::cerr << "\t Num faces in component = " << cobj->getFaceIds().size() << std::endl;
 
     std::cerr << "[INFO] FaceTools::ActionCropFace::operator(): Filling holes... ";
     const int nfilled = RFeatures::ObjModelHoleFiller::fillHoles( cobj) - 1;
@@ -44,6 +45,7 @@ bool ActionCropFace::operator()( FaceControl* fcont)
     else
         std::cerr << "none found";
     std::cerr << std::endl;
+    std::cerr << "\t Num faces in component = " << cobj->getFaceIds().size() << std::endl;
 
     // Increase vertex density
     const double mta = fcont->getOptions().maxTriangleArea;
@@ -51,16 +53,19 @@ bool ActionCropFace::operator()( FaceControl* fcont)
               << mta << " " << units << "^2..." << std::endl;
     RFeatures::ObjModelVertexAdder vadder(cobj);
     vadder.subdivideAndMerge( mta);
+    std::cerr << "\t Num faces in component = " << cobj->getFaceIds().size() << std::endl;
 
     // Crop #2 (for smoother boundary)
     crad = FaceTools::calcFaceCropRadius( omd, fcont->getOptions().boundary.cropFactor);
     std::cerr << "[INFO] FaceTools::ActionCropFace::operator(): Crop #2 within " << crad << " " << units << " of face centre..." << std::endl;
-    cobj = FaceTools::crop( cobj, fc, crad, 0);
+    cobj = FaceTools::crop( cobj, fc, 0, crad);
+    std::cerr << "\t Num faces in component = " << cobj->getFaceIds().size() << std::endl;
 
     // Smooth
     const double sfactor = fcont->getOptions().smoothFactor;
     std::cerr << "[INFO] FaceTools::ActionCropFace::operator(): Smoothing (" << sfactor << " factor over max 10 iterations)..." << std::endl;
-    RFeatures::ObjModelCurvatureMap::Ptr cmap = RFeatures::ObjModelCurvatureMap::create( cobj, *cobj->getFaceIds(0).begin());
+    std::cerr << "\t Num faces in component = " << cobj->getFaceIds().size() << std::endl;
+    RFeatures::ObjModelCurvatureMap::Ptr cmap = RFeatures::ObjModelCurvatureMap::create( cobj, *cobj->getFaceIds().begin());
     size_t numSmoothIterations = 10;
     RFeatures::ObjModelSmoother( cmap).smooth( sfactor, numSmoothIterations);
 

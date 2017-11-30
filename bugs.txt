@@ -2,9 +2,6 @@
 ))))))))))) BUGS (((((((((((
 
 Backend:
-b1) When crop radius too high, cropping function breaks (past 2.35 on petra.obj)
-    Enforce hard limit for now.
-b2) Fix RFeatures::ObjModelBoundaryFinder to deal with strings of triangles.
 b3) Prevent VTK error dialog from appearing on release build.
 
 Landmarks:
@@ -36,6 +33,8 @@ b16) Copy/move not enabled on target viewer immediately after copying to it.
 b8) [WIN32] Drag'n'drop files not working.
 b19) [WIN32] Crash on exit.
 b20) Fixed bug in distance mapping (Fast Marching).
+b1) When crop radius too high, cropping function breaks (past 2.35 on petra.obj)
+b2) Fix RFeatures::ObjModelBoundaryFinder to deal with strings of triangles.
 
 
 ))))))))))) FEATURES (((((((((((
@@ -55,8 +54,6 @@ f7) Dropdown list view under viewer to aid model select?
 
 f8) Save out visualisation mappings to 3df? Consider issue of multiple views.
 
-f9) Build and visualise distance map.
-
 f11) Close all on file menu.
 
 f12) Rename landmarks.
@@ -68,9 +65,8 @@ f16) Model movement controls (toggle between model and camera).
 f17) Error logging to file (dialog offering to send log as email attachment?)
 
 
-
-
 Implemeted:
 f5) Change surface colour on active for models without borders.
+f9) Build and visualise distance map.
 f10) Right click on a model selects it.
 f14) Display of capture date/time in ModelInfoDialog.

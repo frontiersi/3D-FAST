@@ -33,8 +33,8 @@ void AboutDialog::finishContent()
     QString appString = appv.join('.');
 
     QStringList appn;
-    appn << APP_NAME << QString::fromUtf8("\u00A9") << "2017" << APP_AUTHOR_NAME
-         << QString("(<a href=\"mailto:%0?subject=%1 (BUG REPORT) version %2\">report bugs</a>)").arg( APP_AUTHOR_EMAIL, APP_NAME, appString);
+    appn << APP_NAME << QString::fromWCharArray(L"\u00A9 2017") << APP_AUTHOR_NAME
+         << QString("(<a href=\"mailto:%0?Subject=%1 (BUG REPORT) version %2\">report bugs</a>)").arg( APP_AUTHOR_EMAIL, APP_NAME, appString);
 
     QStringList cnt;
     cnt << "<br/>"

@@ -47,6 +47,7 @@ bool ActionDetectFace::operator()( FaceControl* fcont)
     assert( omd->hasLandmark( FaceTools::Landmarks::NASAL_TIP));
     const cv::Vec3f& v = omd->getLandmark( FaceTools::Landmarks::NASAL_TIP);
     const int vidx = omd->getKDTree()->find( v);
+
     ObjModel::Ptr comp = FaceTools::getComponent( omd->getObject(), vidx);
     std::cerr << "Got face component" << std::endl;
     progress( 0.72f);

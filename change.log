@@ -1,6 +1,3 @@
-Version 2.0.0
-- Baseline
-
 Version 2.0.1
 - Made main window progress bar available.
 - Moved PDF generation to background thread and connected to progress bar.
@@ -27,6 +24,8 @@ Version 2.0.1
 - Placed reset camera button on main toolbar.
 - Added save snapshot button to toolbar - made to save concatenation of views.
 - Disabled world axes interactivity (NB still interferes with other interactions).
+- Added links and version info to About dialog.
+- Added uniform distance map visualisation.
 - Fixed bugs:
   b6) Unable to select move landmarks when multiple faces viewed.
   b7) Landmarks can be moved after toggling landmark display.
@@ -36,3 +35,10 @@ Version 2.0.1
   b16) Copy/move not enabled on target viewer immediately after copying to it.
   b19) [WIN32] Crash on exit.
   b20) Fixed distance mapping (fast marching).
+  b1) When crop radius too high, cropping function breaks (past 2.35 on petra.obj)
+      New RFeatures::ObjModelCropper
+  b2) Fix RFeatures::ObjModelBoundaryFinder to deal with strings of triangles:
+      Fixed by rewritting boundary finder code in RFeatures.
+
+Version 2.0.0
+- Baseline
